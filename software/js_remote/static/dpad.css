@@ -1,0 +1,74 @@
+body {
+	background-color: #111;
+}
+.dpad {
+	border: #343 1px solid;
+	background-color: #222;
+	border-radius: 5%;
+}
+.stick {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	left: 25%;
+	top: 25%;
+	border: 0;
+	background-color: #363;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 10%;
+}
+.vpad {
+	border: #343 1px solid;
+	background-color: #222;
+	border-radius: 15% / 5%;
+}
+.vpad .stick {
+	position: relative;
+	width: 100%;
+	height: 33%;
+	left: 0%;
+	top: 33%;
+	border: 0;
+	background-color: #363;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 10%;
+}
+.hpad {
+	border: #343 1px solid;
+	background-color: #222;
+	border-radius: 5% / 15%;
+}
+.hpad .stick {
+	position: relative;
+	width: 33%;
+	height: 100%;
+	left: 33%;
+	top: 0%;
+	border: 0;
+	background-color: #363;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 10%;
+}
+.bpad {
+	border: #343 1px solid;
+	background-color: #222;
+	border-radius: 50%;
+}
+.bpad .stick {
+	position: relative;
+	width: 90%;
+	height: 90%;
+	left: 5%;
+	top: 5%;
+	border: 0;
+	background-color: #363;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+.stick:hover {
+	background-color: #484;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<link rel="stylesheet" type="text/css" href="dpad.css">
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="dpad.js"></script>
+		<script src="remote.js"></script>
+		<script>
+function control() {
+	var ret=[];
+	for( var i=0 ; i<vpads.length ; ++i ) {
+		ret.push( vpads[i].Y );
+	}
+	return ret;
+}
+$(document).ready( function() {
+	initRemote({ controlFunction: control });
+})
+		</script>
+	</head>
+	<body>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:0px;top:0;">
+			<div class="stick"></div>
+		</div>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:97px;top:0;">
+			<div class="stick"></div>
+		</div>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:194px;top:0;">
+			<div class="stick"></div>
+		</div>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:291px;top:0;">
+			<div class="stick"></div>
+		</div>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:388px;top:0;">
+			<div class="stick"></div>
+		</div>
+		<div class="vpad" style="width:93px;height:280px;position:fixed;left:485px;top:0;">
+			<div class="stick"></div>
+		</div>
+	</body>
+</html>

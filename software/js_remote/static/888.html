@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<link rel="stylesheet" type="text/css" href="dpad.css">
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="dpad.js"></script>
+		<script src="remote.js"></script>
+        <style>
+#overlay {
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+#overlay .stick {
+  background: none;
+  border: solid 1px #A00;
+  color: #A00;
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 40px;
+}
+
+#fire {
+  border-color: #900;
+}
+#fire .stick {
+  background-color: #900;
+  font-size: 60px;
+  color: #CAA;
+  vertical-align: middle;
+  line-height: 80px;
+}
+
+#fire *:hover {
+  background-color: #D00;
+}
+        </style>
+		<script>
+function control() {
+	var ret=[0., 0., 0., 0., 0., 0.];
+    ret[5] = vpads[0].Y;
+    ret[0] = -hpads[0].X;
+    ret[2] = dpads[0].Y;
+    ret[1] = -dpads[0].X;
+    ret[3] = bpads[0].X - bpads[1].X;
+	return ret;
+}
+$(document).ready( function() {
+	initRemote({ controlFunction: control });
+    $('#video').attr( 'src', 'http://'+window.location.hostname+':8090/?action=stream' );
+})
+		</script>
+	</head>
+	<body>
+		<div class="vpad" style="width:62px;height:280px;position:fixed;left:0px;top:0;">
+			<div class="stick"></div>
+		</div>
+
+        <img id="video"
+style="width:352px;height:288px;position:fixed;left:64px;top:0;z-index=0">
+		<div id="overlay" class="dpad"
+style="width:352px;height:288px;position:fixed;left:64px;top:0;z-index=1">
+			<div class="stick">+</div>
+		</div>
+        
+        <div class="hpad"
+style="width:178px;height:62px;position:fixed;left:418px;top:220px">
+            <div class="stick"></div>
+        </div>
+        
+        <div class="bpad" id="fire"
+style="width:80px;height:80px;position:fixed;left:470px;top:120px;">
+            <div class="stick">&#x2620;</div>
+        </div>
+        <div class="bpad"
+style="width:80px;height:80px;position:fixed;left:470px;top:20px;">
+            <div class="stick"></div>
+        </div>
+	</body>
+</html>

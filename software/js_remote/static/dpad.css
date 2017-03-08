@@ -17,6 +17,12 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	border-radius: 10%;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .vpad {
 	border: #343 1px solid;
@@ -69,6 +75,6 @@ body {
 	vertical-align: middle;
 	border-radius: 50%;
 }
-.stick:hover {
+.stick.active {
 	background-color: #484;
 }

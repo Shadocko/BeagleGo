@@ -46,6 +46,7 @@ $(document).ready(function init() {
     		clickX = ev.screenX;
     		clickY = ev.screenY;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$el.on('mousemove', function(ev) {
@@ -58,6 +59,7 @@ $(document).ready(function init() {
     		myLog('up');
     		drag=false;
     		setXY(0.0, 0.0);
+            $stick.removeClass('active');
     	});
     	
     	$stick.on('touchstart', function(ev) {
@@ -65,6 +67,7 @@ $(document).ready(function init() {
     		clickX = ev.originalEvent.targetTouches[0].screenX;
     		clickY = ev.originalEvent.targetTouches[0].screenY;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$stick.on('touchmove', function(ev) {
@@ -78,6 +81,7 @@ $(document).ready(function init() {
     		myLog('touchend');
     		drag=false;
     		setXY(0.0, 0.0);
+            $stick.removeClass('active');
     	});
         
         setXY(0.0, 0.0);
@@ -109,6 +113,7 @@ $(document).ready(function init() {
     		myLog('down');
     		clickY = ev.screenY;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$el.on('mousemove', function(ev) {
@@ -121,12 +126,14 @@ $(document).ready(function init() {
     		myLog('up');
     		drag=false;
     		setY(0.0);
+            $stick.removeClass('active');
     	});
     	
     	$stick.on('touchstart', function(ev) {
     		myLog('touchstart');
     		clickY = ev.originalEvent.targetTouches[0].screenY;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$stick.on('touchmove', function(ev) {
@@ -139,6 +146,7 @@ $(document).ready(function init() {
     		myLog('touchend');
     		drag=false;
     		setY(0.0);
+            $stick.removeClass('active');
     	});
         
         setY(0.0);
@@ -170,6 +178,7 @@ $(document).ready(function init() {
     		myLog('down');
     		clickX = ev.screenX;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$el.on('mousemove', function(ev) {
@@ -182,12 +191,14 @@ $(document).ready(function init() {
     		myLog('up');
     		drag=false;
     		setX(0.0);
+            $stick.removeClass('active');
     	});
     	
     	$stick.on('touchstart', function(ev) {
     		myLog('touchstart');
     		clickX = ev.originalEvent.targetTouches[0].screenX;
     		drag=true;
+            $stick.addClass('active');
     	});
     	
     	$stick.on('touchmove', function(ev) {
@@ -200,6 +211,7 @@ $(document).ready(function init() {
     		myLog('touchend');
     		drag=false;
     		setX(0.0);
+            $stick.removeClass('active');
     	});
         
         setX(0.0);
@@ -224,21 +236,25 @@ $(document).ready(function init() {
     	$stick.on('mousedown', function(ev) {
     		myLog('down');
     		setX(1.0);
+            $stick.addClass('active');
     	});
     
     	$stick.on('mouseup', function(ev) {
     		myLog('up');
     		setX(0.0);
+            $stick.removeClass('active');
     	});
     	
     	$stick.on('touchstart', function(ev) {
     		myLog('touchstart');
             setX(1.0);
+            $stick.addClass('active');
     	});
     	
     	$stick.on('touchend', function(ev) {
     		myLog('touchend');
     		setX(0.0);
+            $stick.removeClass('active');
     	});
         
         setX(0.0);

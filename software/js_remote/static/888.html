@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<meta content="width=600, height=280, user-scalable=0" name="viewport" />
 		<link rel="stylesheet" type="text/css" href="dpad.css">
 		<script src="jquery-2.1.4.min.js"></script>
 		<script src="dpad.js"></script>
@@ -22,19 +22,24 @@
   line-height: 80px;
   border-radius: 40px;
 }
-
+#overlay .stick.active {
+  background-color: #F005;
+  border: solid 1px #F00;
+  color: #F00;  
+}
 #fire {
   border-color: #900;
 }
 #fire .stick {
   background-color: #900;
-  font-size: 60px;
+  font-size: 40px;
   color: #CAA;
+  align: center;
   vertical-align: middle;
-  line-height: 80px;
+  line-height: 65px;
 }
 
-#fire *:hover {
+#fire .stick.active {
   background-color: #D00;
 }
         </style>
@@ -73,7 +78,8 @@ style="width:178px;height:62px;position:fixed;left:418px;top:220px">
         
         <div class="bpad" id="fire"
 style="width:80px;height:80px;position:fixed;left:470px;top:120px;">
-            <div class="stick">&#x2620;</div>
+<!--            <div class="stick">&#x2620;</div>-->
+            <div class="stick">&#x1f480;</div>
         </div>
         <div class="bpad"
 style="width:80px;height:80px;position:fixed;left:470px;top:20px;">

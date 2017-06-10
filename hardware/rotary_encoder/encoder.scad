@@ -5,7 +5,7 @@
  */
 
 /// Global precision setting
-$fn=12;
+$fn=60;
 
 /// @name Some dimensions of LEGO parts
 ///@{
@@ -101,8 +101,8 @@ module optical_fork() {
   }
 }
 
-//fork_a_position(){ optical_fork(); }
-//fork_b_position(){ optical_fork(); }
+%fork_a_position(){ optical_fork(); }
+%fork_b_position(){ optical_fork(); }
 
 /// Make support structure for an optical fork
 module fork_support() {
@@ -199,6 +199,10 @@ difference() {
   position_screw_axis() rotate([0.,0.,30.]) cylinder(d=7.66, h=4., $fn=6);
   // Logo
   translate([2.5*M-e-.5, 2.5*M-2, 5.]) rotate([0.,0.,-90.]) rotate([-90.,0.,0.]) linear_extrude(height=.5) text("BeagleGo", font="Helvetica:style=Bold Italic", size=2.8);
+  // OSHWA logo
+  translate([2., 2.5*M-e-.5, 7.]) rotate([-90.,0.,0.])
+    linear_extrude(height=1., center=false, convexity=10)
+    import (file = "oshwa-logo.dxf");
 }
 
 // Side B...
@@ -207,9 +211,10 @@ translate([6.*M,0.,0.]) scale([-1.,1.,1.]) difference() {
   // Bolt head housing
   position_screw_axis() cylinder(d=7.+e, h=4.);
   // Markings
-  translate([2.5*M-e, 2.5*M-2, 3.]) rotate([0.,0.,-90.]) rotate([90.,0.,0.]) linear_extrude(height=.5) text(str(4*num_windows," steps"), font="Helvetica:style=Bold Italic", size=2.8);}
+  translate([2.5*M-e, 2.5*M-2, 3.]) rotate([0.,0.,-90.]) rotate([90.,0.,0.]) linear_extrude(height=.5) text(str(4*num_windows," steps"), font="Helvetica:style=Bold Italic", size=2.8);
+}
 
-/// Make shape to suubstract to get a sliding cross axle hole
+/// Make shape to substract to get a sliding cross axle hole
 /// @param length   length of hole (defaults to one LEGO module)
 module axle_hole(length=M) {
   difference() {
@@ -224,9 +229,9 @@ module wheel() {
   difference() {
     union() {
       // For something easily printable in FDM...
-      translate([0.,0.,e]) cylinder(d=7., h=10.-e /*2.*(M-e)*/);
+      //translate([0.,0.,e]) cylinder(d=7., h=10.-e /*2.*(M-e)*/);
       // For when your fabrication process allows for clean models with supports
-      //translate([0.,0.,e]) cylinder(d=7., h=2.*(M-e));
+      translate([0.,0.,e]) cylinder(d=7., h=2.*(M-e));
       translate([0.,0.,6.]) difference() {
         cylinder(d=23., h=4., $fn=num_windows*3);
         intersection() {

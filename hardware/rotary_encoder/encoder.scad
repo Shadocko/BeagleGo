@@ -251,7 +251,7 @@ module wheel() {
         }
       }
     }
-    axle_hole(length=10.);
+    axle_hole(length=16.);
   }
 }
 

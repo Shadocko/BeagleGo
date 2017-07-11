@@ -25,7 +25,7 @@ pinhole_out_length=0.8;
 num_windows=16;
 
 /// Case thickness
-thickness=1.;
+thickness=1.5;
 
 /**
  * @name Optical Fork dimensions
@@ -157,7 +157,7 @@ module basic_case() {
         }
         // Inner shell
         difference() {
-          translate([0.,0.,1.]) union() {
+          translate([0.,0.,thickness]) union() {
             cylinder(d=5*M-2.*thickness, h=M);
             cube([2.5*M-thickness, 2.5*M-thickness, M]);
           }
